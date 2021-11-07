@@ -1,18 +1,18 @@
 """
-This program scrapes market.bisnis.com/rekomendasi page and then analyzes
+This script scrapes market.bisnis.com/rekomendasi page and then analyzes
 each article to see keywords like stock tickers. Hopefully later in dev
 we can analyze the sentiment of the article itself also.
 """
 from bs4 import BeautifulSoup
-import urllib.request,sys,time
+import sys
 import requests
-import pandas as pd
 import re
 
 headers = {"User-Agent":"Mozilla/5.0"}
 
 def get_tickers(url):
     tickers = {}
+    # 4 all caps letter words that are NOT stock tickers
     unused_words = ['IHSG', 'BUMN', 'NEWS', 'LIVE', 'EMAS', 'KURS', 'FREE', 'PPKM']
         
     try:
