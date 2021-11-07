@@ -3,16 +3,18 @@ This program scrapes market.bisnis.com/rekomendasi page and then analyzes
 each article to see keywords like stock tickers. Hopefully later in dev
 we can analyze the sentiment of the article itself also.
 
+The tickers are then formatted to excel and sorted based on reference.
+
 ** WARNING! **
 
 Do NOT actually use this for stockpicking. Buying/selling stocks
 from news recommendation alone is a TERRIBLE idea. Hence, DYOR!
 """
 from bs4 import BeautifulSoup
-import urllib.request,sys,time
+import sys, time
 import requests
 import pandas as pd
-from artikelscraping import get_tickers
+from gettickers import get_tickers
 from datetime import datetime
 
 url = 'https://market.bisnis.com/rekomendasi'
