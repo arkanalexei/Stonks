@@ -1,7 +1,6 @@
 """
-This script scrapes market.bisnis.com/rekomendasi page and then analyzes
-each article to see keywords like stock tickers. Hopefully later in dev
-we can analyze the sentiment of the article itself also.
+This script scrapes IMDB's top 250 movies of all time and returns
+a random movie from it
 """
 from bs4 import BeautifulSoup
 import sys
